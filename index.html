@@ -164,7 +164,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="TRI-DEP: TRI-DEP: A Trimodal Comparative Study for Depression Detection Using Speech, Text, and EEG">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">TRI-DEP: A Trimodal Comparative Study for Depression Detection Using Speech, Text, and EEG</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -178,7 +178,7 @@
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">DISI, University of Bologna, Italy<br>ICSSP</span>
+                    <span class="author-block">DISI, University of Bologna, Italy<br>ICASSP 2026</span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
@@ -205,7 +205,6 @@
 </section>
 
 
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -222,7 +221,52 @@
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
+<!-- End paper abstract —>
+
+
+<!-- Baseline Works -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Baseline Works</h2>
+    <div class="content has-text-justified">
+      <p>
+        In this study, we implemented from scratch two multimodal baselines for comparison, both combining EEG and audio signals on the MODMA dataset. 
+        Yousufi et al. (2024) used DenseNet-121 as a feature extractor, while Qayyum et al. (2023) applied Vision Transformer (ViT) models for generating EEG and audio spectrograms.
+      </p>
+    </div>
+
+    <!-- Subsection 1 -->
+    <h3 class="title is-4">Data Preparation for Baseline Works</h3>
+    <div class="content has-text-justified">
+      <p>
+        EEG preprocessing follows Yousufi et al. (2024), including a 0.4–45 Hz FIR bandpass filter, a 50 Hz notch filter, and average referencing. 
+        We selected 29 channels (FP2, FP1, Fz, F7, F3, F4, F8, FT7, FC3, FCz, FC4, FT8, C3, C4, T3, CP3, CPz, CP4, T4, TP7, P3, Pz, P4, TP8, T5, T6, O1, Oz, O2) for analysis. 
+        Since Qayyum et al. (2023) provide limited details, we applied the same preprocessing pipeline to both baselines for consistency.
+        For audio pre-processing, since both studies generate audio spectrograms directly from the original sampling rate of 44 kHz, we assume that no additional preprocessing was performed on the speech signals prior to spectrogram extraction.
+      </p>
+    </div>
+
+    <!-- Subsection 2 -->
+    <h3 class="title is-4">EEG and Speech Spectrogram Generation</h3>
+    <div class="content has-text-justified">
+      <p>
+        Following Yousufi et al. (2024) and Qayyum et al. (2023), we generate STFT spectrograms for EEG and mel-spectrograms for audio using <code>librosa</code>. 
+        We apply <code>n_fft=1024</code>, <code>hop_length=512</code>, and <code>n_mels=64</code> (for audio). 
+        The resulting spectrograms are saved as <code>.png</code> images for use with 2D models such as DenseNet-121 and ViT.
+      </p>
+    </div>
+
+    <!-- Subsection 3 -->
+    <h3 class="title is-4">Data Splitting</h3>
+    <div class="content has-text-justified">
+      <p>
+        We use stratified 5-fold cross-validation with subject-level splitting to prevent data leakage. 
+        In each fold, 10% of the training data is set aside for validation (using a fixed random seed), 
+        resulting in train, validation, and test splits that preserve class balance.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- Experiments and Results -->
 <section class="section">
@@ -233,16 +277,17 @@
     <h3 class="title is-4">Data Splitting</h3>
     <div class="content has-text-justified">
       <p>
-        we perform all experiments at the subject level using stratified 5-fold cross-validation to preserve class balance. The same subject-level splits are used across experiments, ensuring reproducibility, fair comparability, and robust results reported as mean and standard deviation across folds.
+        We perform all experiments at the subject level using stratified 5-fold cross-validation to preserve class balance. The same subject-level splits are used across experiments, ensuring reproducibility, fair comparability, and robust results reported as mean and standard deviation across folds.
       </p>
 
       <!-- Image -->
-    <figure class="image is-3by2">
-      <img src="static/images/data-split.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
-      <figcaption class="has-text-centered">
-        Subject split configurations
-      </figcaption>
-    </figure>
+      <figure class="image is-fullwidth">
+        <img src="static/images/data-split.png" alt="Subject split configurations" loading="lazy">
+        <figcaption class="has-text-centered">
+          Subject split configurations
+        </figcaption>
+      </figure>
+      
   </div>
 
   <!-- Subsection 2 -->
@@ -252,7 +297,7 @@
         Below, we present the results of the baseline models, along with the improvements obtained after hyperparameter tuning and the addition of the text modality.
       </p>
     <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/hyperparameter-baseline.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Classification performance of Vision Transformer for different pooling strategies
@@ -260,7 +305,7 @@
     </figure>
 
     <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/Vit-ori.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Classification performance of Vision Transformer for different pooling strategies
@@ -268,7 +313,7 @@
     </figure>
 
     <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/Dense-ori.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Classification performance of DenseNet-121 for different pooling strategies
@@ -276,7 +321,7 @@
     </figure>
 
     <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/ViT-tune.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Performance comparison of ViT before and after manual tuning.
@@ -284,7 +329,7 @@
     </figure>
 
     <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/Dense-tune.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Performance comparison of DenseNet-121 before and after manual tuning.
@@ -292,7 +337,7 @@
     </figure>
 
     <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/baseline-text.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         erformance comparison of baseline works with and without text modality
@@ -310,7 +355,7 @@
       </p>
     
           <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/eeg-res.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Performance Results on EEG Modality
@@ -318,7 +363,7 @@
     </figure>
 
         <!-- Image -->
-        <figure class="image is-3by2">
+        <figure class="image is-fullwidth">
           <img src="static/images/speech-res.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
           <figcaption class="has-text-centered">
             Performance Results on Speech Modality
@@ -326,7 +371,7 @@
         </figure>
 
           <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/text-res.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Performance Results on Text Modality
@@ -334,7 +379,7 @@
     </figure>
 
         <!-- Image -->
-        <figure class="image is-3by2">
+        <figure class="image is-fullwidth">
           <img src="static/images/multimodal-res.png" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
           <figcaption class="has-text-centered">
             Performance Results on Multimodal Fusion Strategies
@@ -351,7 +396,7 @@
       </p>
     
           <!-- Image -->
-    <figure class="image is-3by2">
+    <figure class="image is-fullwidth">
       <img src="static/images/architecture.jpg" alt="Illustration of stratified 5-fold cross-validation" loading="lazy">
       <figcaption class="has-text-centered">
         Best Architecture. CBraMod diagram was retrieved from their original publication (Wang et al., 2024)
@@ -368,7 +413,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
