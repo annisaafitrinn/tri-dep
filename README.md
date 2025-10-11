@@ -1,6 +1,5 @@
-# Academic Project Page Template by Elliahu Horwitz
+# Research Project: Multimodal Deep Learning Architecture for Depression Detection using EEG, Speech, and Text
 
-A clean, responsive template for academic project pages.
 
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
