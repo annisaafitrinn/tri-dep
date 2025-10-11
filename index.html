@@ -268,6 +268,38 @@
   </div>
 </section>
 
+<!-- Our Works -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Methodology</h2>
+    <div class="content has-text-justified">
+      <p></p>
+    </div>
+
+    <!-- Subsection 1 -->
+    <h3 class="title is-4">EEG Preprocessing</h3>
+    <div class="content has-text-justified">
+      <p>
+        EEG preprocessing follows two pipelines depending on the feature extraction method. 
+      </p>
+      <p>
+        <b>Pipeline 1:</b> We select 29 depression-related EEG channels 
+        <code>[FP2, FP1, Fz, F7, F3, F4, F8, FT7, FC3, FCz, FC4, FT8, C3, C4, T3, CP3, CPz, CP4, T4, TP7, P3, Pz, P4, TP8, T5, T6, O1, Oz, O2]</code>. 
+        Signals are bandpass filtered (0.5–50 Hz), notch filtered at 50 Hz, re-referenced to the average electrode, and segmented into 10-second windows.
+      </p>
+      <p>
+        <b>Pipeline 2:</b> We replicated the preprocessing steps of the CBraMod model for the MUMTAZ depression dataset. 
+        Signals are resampled to 200 Hz, bandpass filtered between 0.3–75 Hz, and notch filtered at 50 Hz. 
+        19 channels are selected 
+        <code>[FP2, FP1, F7, F3, F4, F8, FCz, C3, C4, T3, CPz, T4, P3, Pz, P4, T5, T6, O1, O2]</code>. 
+        The signals are segmented into 5-second windows (1000 samples each at 200 Hz). 
+        Each recording is divided into multiple fixed-length windows, and each window is further split into 5 non-overlapping patches of 200 samples each.
+      </p>
+    </div>
+  </div>
+</section>
+
+
 <!-- Experiments and Results -->
 <section class="section">
   <div class="container is-max-desktop">
