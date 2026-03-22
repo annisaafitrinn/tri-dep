@@ -2,6 +2,7 @@
 
 **Annisaa Fitri Nurfirdausi\*, Eleonora Mancini\*, Paolo Torroni**
 DISI, University of Bologna, Italy
+
 \* Equal contribution
 
 [![arXiv](https://img.shields.io/badge/arXiv-2510.14922-b31b1b.svg)](https://arxiv.org/abs/2510.14922)
@@ -10,7 +11,7 @@ DISI, University of Bologna, Italy
 
 ## 📄 Abstract
 
-Depression is a widespread mental health disorder, yet its automatic detection remains challenging. Prior work has explored unimodal and multimodal approaches, with multimodal systems showing promise by leveraging complementary signals. However, existing studies are limited in scope, lack systematic comparisons of features, and suffer from inconsistent evaluation protocols. We address these gaps by systematically exploring feature representations and modeling strategies across EEG, speech, and text. We evaluate handcrafted features versus pretrained embeddings, assess the effectiveness of different neural encoders, compare unimodal, bimodal, and trimodal configurations, and analyze fusion strategies with attention to the complementary role of EEG. Consistent subject-independent splits ensure reproducible benchmarking. Our results show that the combination of EEG enhances multimodal detection, pretrained embeddings outperform handcrafted features, and carefully designed trimodal models achieve state-of-the-art performance.
+Depression is a widespread mental health disorder, yet its automatic detection remains challenging. Prior work has explored unimodal and multimodal approaches, with multimodal systems showing promise by leveraging complementary signals. However, existing studies are limited in scope, lack systematic comparisons of features, and suffer from inconsistent evaluation protocols. We address these gaps by systematically exploring feature representations and modelling strategies across EEG, together with speech and text. We evaluate handcrafted features versus pre-trained embeddings, assess the effectiveness of different neural encoders, compare unimodal, bimodal, and trimodal configurations, and analyse fusion strategies with attention to the role of EEG. Consistent subject-independent splits are applied to ensure robust, reproducible benchmarking. Our results show that (i) the combination of EEG, speech and text modalities enhances multimodal detection, (ii) pretrained embeddings outperform handcrafted features, and (iii) carefully designed trimodal models achieve state-of-the-art performance. Our work lays the groundwork for future research in multimodal depression detection.
 
 ---
 
