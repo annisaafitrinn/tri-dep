@@ -1,8 +1,54 @@
-# Research Project: Multimodal Deep Learning Architecture for Depression Detection using EEG, Speech, and Text
+# TRI-DEP: A Trimodal Comparative Study for Depression Detection Using Speech, Text, and EEG
 
+**Annisaa Fitri Nurfirdausi\*, Eleonora Mancini\*, Paolo Torroni**
+DISI, University of Bologna, Italy
+\* Equal contribution
 
-## Acknowledgments
+[![arXiv](https://img.shields.io/badge/arXiv-2510.14922-b31b1b.svg)](https://arxiv.org/abs/2510.14922)
+
+---
+
+## 📄 Abstract
+
+Depression is a widespread mental health disorder, yet its automatic detection remains challenging. Prior work has explored unimodal and multimodal approaches, with multimodal systems showing promise by leveraging complementary signals. However, existing studies are limited in scope, lack systematic comparisons of features, and suffer from inconsistent evaluation protocols. We address these gaps by systematically exploring feature representations and modeling strategies across EEG, speech, and text. We evaluate handcrafted features versus pretrained embeddings, assess the effectiveness of different neural encoders, compare unimodal, bimodal, and trimodal configurations, and analyze fusion strategies with attention to the complementary role of EEG. Consistent subject-independent splits ensure reproducible benchmarking. Our results show that the combination of EEG enhances multimodal detection, pretrained embeddings outperform handcrafted features, and carefully designed trimodal models achieve state-of-the-art performance.
+
+---
+
+## 🔗 Links
+
+- 📝 **Paper (arXiv):** https://arxiv.org/abs/2510.14922
+- 🌐 **Project website:** https://annisaafitrinn.github.io/tri-dep/
+- 💻 **Code repository:** https://github.com/annisaafitrinn/tri-dep1
+
+---
+
+## 🗂️ About this repository
+
+This repository hosts the **project website** for the TRI-DEP paper. The site is a static HTML page built on the [Nerfies](https://nerfies.github.io/) template.
+
+The full implementation — preprocessing, feature extraction, model training, and fusion scripts — lives in the **[tri-dep1](https://github.com/annisaafitrinn/tri-dep1)** repository.
+
+---
+
+## 📖 Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{nurfirdausi2025tridep,
+  title     = {TRI-DEP: A Trimodal Comparative Study for Depression Detection Using Speech, Text, and EEG},
+  author    = {Nurfirdausi, Annisaa Fitri and Mancini, Eleonora and Torroni, Paolo},
+  journal   = {arXiv preprint arXiv:2510.14922},
+  year      = {2025}
+}
+```
+
+---
+
+## 🙏 Acknowledgments
+
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+## 📜 Website License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
