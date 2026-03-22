@@ -1,6 +1,7 @@
 # TRI-DEP: A Trimodal Comparative Study for Depression Detection Using Speech, Text, and EEG
 
 **Annisaa Fitri Nurfirdausi\*, Eleonora Mancini\*, Paolo Torroni**
+
 DISI, University of Bologna, Italy
 
 \* Equal contribution
